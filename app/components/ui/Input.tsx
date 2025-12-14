@@ -34,7 +34,7 @@ export default function Input({
     return (
         <div className="w-full flex flex-col gap-1">
             {label && (
-                <label htmlFor={name} className="text-sm font-medium">
+                <label htmlFor={name} className="text-sm font-bold">
                     {label}
                 </label>
             )}

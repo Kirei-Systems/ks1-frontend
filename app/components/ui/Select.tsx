@@ -39,7 +39,7 @@ export default function Select({
     return (
         <div className="w-full flex flex-col gap-1 relative">
             {label && (
-                <label htmlFor={name} className="text-sm font-medium text-gray-700">
+                <label htmlFor={name} className="text-sm font-bold text-gray-700">
                     {label}
                 </label>
             )}

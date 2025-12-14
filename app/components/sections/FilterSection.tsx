@@ -15,7 +15,7 @@ export default function FilterSection() {
     const [lazer, setLazer] = useState("");
 
     return (
-        <div className="p-8 mt-8 bg-zinc-50 rounded-lg shadow-md">
+        <section className="p-8 my-16 bg-[#FFFFFF] rounded-2xl shadow-md">
             <Input
                 label="Busca inteligente por IA"
                 placeholder="Descreva seu imóvel dos sonhos. Ex: 2 quartos, sala, suíte..."
@@ -96,9 +96,9 @@ export default function FilterSection() {
                     onChange={(e) => setBedRooms(e.target.value)}
                     options={[
                         { value: "", label: "Qualquer" },
-                        { value: "1", label: "1+" },
-                        { value: "2", label: "2+" },
-                        { value: "3", label: "3+" },
+                        { value: "1", label: "1" },
+                        { value: "2", label: "2" },
+                        { value: "3", label: "3" },
                         { value: "4", label: "4+" },
                     ]}
                 />
@@ -110,9 +110,9 @@ export default function FilterSection() {
                     onChange={(e) => setBathRooms(e.target.value)}
                     options={[
                         { value: "", label: "Qualquer" },
-                        { value: "1", label: "1+" },
-                        { value: "2", label: "2+" },
-                        { value: "3", label: "3+" },
+                        { value: "1", label: "1" },
+                        { value: "2", label: "2" },
+                        { value: "3", label: "3" },
                         { value: "4", label: "4+" },
                     ]}
                 />
@@ -125,8 +125,8 @@ export default function FilterSection() {
                     options={[
                         { value: "", label: "Qualquer" },
                         { value: "0", label: "Sem vaga" },
-                        { value: "1", label: "1+" },
-                        { value: "2", label: "2+" },
+                        { value: "1", label: "1" },
+                        { value: "2", label: "2" },
                         { value: "3", label: "3+" },
                     ]}
                 />
@@ -154,6 +154,6 @@ export default function FilterSection() {
                     ]}
                 />
             </div>
-        </div>
+        </section>
     );
 }

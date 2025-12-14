@@ -2,7 +2,7 @@ import { Instagram, Mail } from "lucide-react";
 
 export default function Footer() {
     return (
-        <footer className="h-18 flex flex-col items-center justify-center gap-2 px-2 py-4 shadow-md mt-4">
+        <footer className="h-18 flex flex-col items-center justify-center gap-2 px-2 py-4 shadow-md mt-4 bg-white">
             <p className="text-center text-sm opacity-70">
                 &copy; 2025 Aluga ou Compra.
             </p>
