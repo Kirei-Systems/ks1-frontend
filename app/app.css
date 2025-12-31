@@ -1,10 +1,41 @@
 @import "tailwindcss";
 
+@plugin "daisyui" {
+  themes: light, dark --prefers-dark, all;
+}
+
+@plugin "daisyui/theme" {
+  name: "dark";
+  --color-primary: var(--color-zinc-800);
+  --color-base-100: var(--color-zinc-800);
+  --color-base-200: var(--color-zinc-700);
+  --color-base-300: var(--color-zinc-600);
+}
+
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  --color-primary: var(--color-base-100);
+  --color-primary-content: var(--color-zinc-800);
+}
+
+
+
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-html, body {
-  background-color: #F9FAFB;
+.card {
+  @apply shadow-sm;
 }
+
+:root,
+* {
+  hyphens: auto;
+}
+
+/* html, */
+/* body { */
+/* background-color: #F9FAFB; */
+/* } */
