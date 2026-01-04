@@ -10,9 +10,21 @@ export async function loader() {
 
 export default function Home({ loaderData: apts }: Route.ComponentProps) {
 	return (
-		<div className="py-4">
-			<FilterSection />
-			<AptSection apts={apts} />
-		</div>
+		<>
+			<div className="relative overflow-hidden px-4 py-16">
+				<img
+					className="absolute top-0 left-0 h-full w-full object-cover"
+					alt=""
+					srcSet="
+					/public/sjdr.jpg 200w,
+					/public/sjdr-xl.jpg 900w
+					"
+				/>
+				<FilterSection />
+			</div>
+			<div className="p-4">
+				<AptSection apts={apts} />
+			</div>
+		</>
 	);
 }

@@ -15,7 +15,7 @@ export default function FilterSection() {
 	const [lazer, setLazer] = useState("");
 
 	return (
-		<section className="card my-16 bg-base-100">
+		<section className="card bg-base-100">
 			<div className="card-body ">
 				<Input
 					label="Busca inteligente por IA"

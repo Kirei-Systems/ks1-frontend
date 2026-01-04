@@ -35,6 +35,15 @@
   hyphens: auto;
 }
 
+.ks-stack {
+  display: grid;
+  grid-template-areas: "a";
+
+  &>* {
+    grid-area: a;
+  }
+}
+
 /* html, */
 /* body { */
 /* background-color: #F9FAFB; */

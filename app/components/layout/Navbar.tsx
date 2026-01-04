@@ -15,7 +15,13 @@ export default function Navbar() {
 				</div>
 			</section>
 			<section className="navbar-center"></section>
-			<section className="navbar-end"></section>
+			<section className="navbar-end">
+				<input
+					className="toggle theme-controller"
+					value="dark"
+					type="checkbox"
+				/>
+			</section>
 		</nav>
 	);
 }
