@@ -1,14 +1,19 @@
-import { aptsList } from "~/api";
+import { aptsList, citiesList, regionsList } from "~/api";
 import AptSection from "~/components/sections/Aptsection";
 import FilterSection from "~/components/sections/FilterSection";
 import type { Route } from "./+types/home";
 import { handleError } from "~/util";
+import { Data, DataProvider } from "~/context";
 
 export async function loader() {
-	return handleError(await aptsList()).results;
+	return {
+		regions: handleError(await regionsList()).results,
+		cities: handleError(await citiesList()).results,
+		apts: handleError(await aptsList()).results
+	};
 }
 
-export default function Home({ loaderData: apts }: Route.ComponentProps) {
+export default function Home({ loaderData: {apts, cities, regions} }: Route.ComponentProps) {
 	return (
 		<>
 			<div className="relative overflow-hidden px-4 py-16">
@@ -20,10 +25,12 @@ export default function Home({ loaderData: apts }: Route.ComponentProps) {
 					/public/sjdr-xl.jpg 900w
 					"
 				/>
-				<FilterSection />
+				<FilterSection cities={cities} regions={regions} />
 			</div>
 			<div className="p-4">
-				<AptSection apts={apts} />
+				<DataProvider data={new Data(regions, cities)}>
+					<AptSection apts={apts} />
+				</DataProvider>
 			</div>
 		</>
 	);

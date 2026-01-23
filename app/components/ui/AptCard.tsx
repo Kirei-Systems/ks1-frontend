@@ -1,6 +1,13 @@
 import type { Apt } from "~/api";
+import { useData } from "~/context";
 
 export default function AptCard({ apt }: { apt: Apt }) {
+	const TABELA: Record<string,string> = {
+		house: "casa",
+		land: "terreno",
+		apartment: "apto"
+	}
+	const {regions} = useData()
 	return (
 		<div className="card bg-base-100">
 			<figure className="h-40 bg-base-200 flex justify-center items-center">
@@ -18,7 +25,7 @@ export default function AptCard({ apt }: { apt: Apt }) {
 			</figure>
 
 			<div className="card-body">
-				<h3 className="card-title">{apt.value}</h3>
+				<h3 className="card-title">{TABELA[apt.category] || apt.category} em {apt.region}</h3>
 
 				<p>{apt.address.address}</p>
 			</div>
